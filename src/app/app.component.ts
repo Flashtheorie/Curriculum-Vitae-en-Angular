@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = `CV d'Antoine Pascual crée à l'aide d'Angular`;
+  title = `CV d'Antoine Pascual`;
   css = `TailwindCSS`;
 }
