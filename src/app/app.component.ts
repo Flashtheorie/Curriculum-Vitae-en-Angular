@@ -29,4 +29,7 @@ const analytics = getAnalytics(app);
 export class AppComponent {
   title = `CV d'Antoine Pascual`;
   css = `TailwindCSS`;
+  constructor() {
+    
+  }
 }
