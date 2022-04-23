@@ -7,7 +7,6 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent extends AppComponent{
-  override title = `CV d'Antoine Pascual`;
-  override css = `TailwindCSS`;
+  
 
 }
