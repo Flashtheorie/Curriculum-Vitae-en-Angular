@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { SendemailComponent } from './sendemail/sendemail.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
     PagenotfoundComponent,
     ProjectsComponent,
     ContactComponent,
+    SendemailComponent,
  
   ],
   imports: [
