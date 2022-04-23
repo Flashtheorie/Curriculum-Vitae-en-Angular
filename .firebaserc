@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cv-d-antoine-pascual"
+  },
+  "targets": {
+    "cv-d-antoine-pascual": {
+      "hosting": {
+        "cv": [
+          "cv-d-antoine-pascual"
+        ]
+      }
+    }
+  }
+}

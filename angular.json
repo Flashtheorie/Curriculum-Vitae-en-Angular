@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "cv:build:production",
+            "firebaseProject": "cv-d-antoine-pascual",
+            "firebaseHostingSite": "cv-d-antoine-pascual"
+          }
         }
       }
     }
