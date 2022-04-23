@@ -5,7 +5,7 @@
   "targets": {
     "cv-d-antoine-pascual": {
       "hosting": {
-        "cv": [
+        "antoinepascual": [
           "cv-d-antoine-pascual"
         ]
       }

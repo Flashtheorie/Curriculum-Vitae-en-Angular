@@ -6,6 +6,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'langages', component: LangagesComponent },
   { path: 'projets', component: ProjectsComponent },

@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "site": "antoinepascual",
-    "public": "public",
+    "target": "antoinepascual",
+    "public": "dist/cv/",
     "ignore": [
       "firebase.json",
       "**/.*",
