@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'langages', component: LangagesComponent },
   { path: 'projets', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
+
   //Wild Card Route for 404 request
   { path: '**', pathMatch: 'full', 
   component: PagenotfoundComponent },
