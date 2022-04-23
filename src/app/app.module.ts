@@ -10,6 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { SendemailComponent } from './sendemail/sendemail.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
+import { ParcoursComponent } from './parcours/parcours.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
     ContactComponent,
     SendemailComponent,
     AboutmeComponent,
+    ParcoursComponent,
  
   ],
   imports: [
