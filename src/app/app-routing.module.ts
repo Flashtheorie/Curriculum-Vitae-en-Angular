@@ -6,6 +6,7 @@ import { LangagesComponent } from './langages/langages.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SendemailComponent } from './sendemail/sendemail.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'projets', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'sendemail', component: SendemailComponent},
+  { path: 'aboutme', component: AboutmeComponent },
   //Wild Card Route for 404 request
   { path: '**', pathMatch: 'full', 
   component: PagenotfoundComponent },
