@@ -5,7 +5,7 @@
 </div>
 
 <div class="flex justify-center items-center mx-auto bg-gray-100">
-    <form action="/sendemail" method="post" class="w-full md:w-3/4 lg:w-3/6 p-4" onsubmit=" event.preventDefault()">
+    <form  class="w-full md:w-3/4 lg:w-3/6 p-4" ng-submit="success()" onsubmit=" event.preventDefault()">
       <div class="p-3">
         <input class="block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Votre nom" required>
       </div>
@@ -25,3 +25,9 @@
     </div>
     </form>
   </div>
+
+  <script>
+    function success(){
+    this.location.replaceState('/mailsent');
+  }
+  </script>

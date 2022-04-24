@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  location: any;
   clicSurBouton(){
     alert("Le formulaire de contact n'est pas encore développé.");
   }
+  
   constructor() { }
 
   ngOnInit(): void {

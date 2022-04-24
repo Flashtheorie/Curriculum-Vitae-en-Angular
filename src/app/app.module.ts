@@ -25,7 +25,7 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
  
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],
