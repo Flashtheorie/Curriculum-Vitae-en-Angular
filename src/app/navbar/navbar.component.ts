@@ -7,5 +7,11 @@ import { Component, Inject, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent{
- 
+
+  
+  
+  toggleDarkMode() {
+    document.documentElement.classList.toggle('dark')
+    localStorage['theme'] = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  }
 }
