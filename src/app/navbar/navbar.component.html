@@ -1,38 +1,63 @@
-<style>
-  .navbar { 
-background-color: #3a3e5e
-
-  }
-</style>
-
-<div class="navbar w-full text-white bg-gray-800 dark:text-gray-200 dark:bg-gray-900">
-  <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-    <div class="p-4 flex flex-row items-center justify-between">
-      <a  routerLink="/home" class="text-lg font-semibold tracking-widest   rounded-lg dark:text-white focus:outline-none focus:shadow-outline text-2xl text-white"><i class="fa-solid fa-bracket-curly text-red-600 fa-2xl"></i>CV<i class="fa-solid fa-bracket-curly-right text-red-600 fa-2xl"></i></a>
-      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline">
-        <i class="fa-solid fa-bars fa-xl"></i>
+<nav class="relative flex flex-wrap items-center justify-between  py-3 bg-slate-700 ">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+      <a routerLink="/home" class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" >
+         <i class="fa-solid fa-bracket-curly text-red-600 text-3xl"></i><span class="text-3xl">CV</span><i class="fa-solid fa-bracket-curly-right text-red-600 text-3xl"></i>
+      </a>
+      <button  class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
+        <i class="fas fa-bars "></i>
       </button>
     </div>
-    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" routerLink="/parcours">
-        <i class="fa-solid fa-graduation-cap fa-lg"></i> Parcours</a>  
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" routerLink="/langages">
-      <i class="fa-solid fa-code fa-lg"></i>  Langages</a>  
-    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" routerLink="/projets">
-      <i class="fa-solid fa-code-branch fa-lg"></i> Projets</a> 
-    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" routerLink="/contact">
-      <i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i>  Contact</a> 
-    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="https://www.linkedin.com/in/antoine-pascual/" target="blank()">
-      <i class="fa-brands fa-linkedin fa-xl"></i>
-    </a> 
-    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="http://github.com/flashtheorie" target="blank()">
-      <i class="fa-brands fa-github fa-xl"></i>
-    </a> 
-    <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline cursor-pointer" (click)="toggleDarkMode()">
-      <i class="fa-duotone fa-moon-cloud fa-xl"></i>
-    </a> 
-         
-    </nav>
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+      <ul class="flex flex-col lg:flex-row list-none ml-auto">
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" routerLink="/parcours">
+            <span class="ml-2">Parcours</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"routerLink="/langages" >
+            <span class="ml-2">Langages</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" routerLink="/projets">
+            <span class="ml-2">Projets</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" routerLink="/contact">
+            <span class="ml-2">Contact</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" routerLink="/contact">
+            <span class="ml-2">Contact</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="https://github.com/Flashtheorie" target="blank()">
+            <span class="ml-2"><i class="fa-brands fa-github fa-2xl"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="https://www.linkedin.com/in/antoine-pascual/" target="blank()">
+            <span class="ml-2"><i class="fa-brands fa-linkedin fa-2xl"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 cursor-pointer flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" (click)="toggleDarkMode()">
+            <span class="ml-2"><i class="fa-duotone fa-moon-cloud fa-2xl"></i></span>
+          </a>
+        </li>
+        <!-- 
+            <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" routerLink="/login">
+            <span class="ml-2">Pin</span>
+          </a>
+        </li>
+         -->
+      </ul>
+    </div>
   </div>
-</div>
-
+</nav>
