@@ -10,7 +10,7 @@ import { initializeApp } from "firebase/app";
 
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
 
 @Component({
   selector: 'app-root',
