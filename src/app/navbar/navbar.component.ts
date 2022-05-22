@@ -11,7 +11,7 @@ export class NavbarComponent{
   showMenu: boolean | undefined;
 
   toggleNavbar(){
-    this.showMenu = !this.showMenu;
+    this.showMenu = !this.showMenu; 
   }
   
   toggleDarkMode() {
